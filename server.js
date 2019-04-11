@@ -29,10 +29,23 @@ const port = 3000;
 // the view should display just the names of each mission
 // display the mission names as <li> in a <ul> with the class name "missions"
 
+
+app.get('/missions', function(req, res)
+{
+	console.log("GET request for /missions");
+	res.render('missions/index.ejs', {missions: marsMissions})
+});
+
+
 // SHOW Route
 // send data to 'missions/show.ejs' view
 // the view should display all the data for a single mission
 
+app.get('/missions/:id', function(req, res)
+{
+	console.log(`GET request for /missions/${req.params.id}`);
+	res.render('missions/show.ejs', {mission: marsMissions[req.params.id]});
+});
 
 
 // LISTENER

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>INDEX</h1>
+
+	<ul class="missions">
+
+		<% for (let i = 0; i < missions.length; i++) { %>
+			<li><a href = "/missions/<%=i%>"><%= missions[i].name %></a></li>
+		<% } %>
+	</ul>
+
+</body>
+</html>
